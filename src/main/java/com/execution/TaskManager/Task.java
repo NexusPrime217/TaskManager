@@ -1,8 +1,15 @@
 package com.execution.TaskManager;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
+@Entity
 public class Task {
+    @Id
+    @GeneratedValue
     private Long id;
     private String title;
     private String description;
@@ -10,6 +17,9 @@ public class Task {
     private String taskType;
     private LocalDate startDate;
     private LocalDate endDate;
+
+    public Task() {
+    }
 
     public Long getId() {
         return id;
